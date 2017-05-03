@@ -14,10 +14,13 @@ change the line:
 spring.datasource.url=You should special database by your local setting
 ```
 
+### 2, about eclipse
+
+if you use Eclipse, please project-> Maven -> Update Project firstly.
+
 ## How to Run
 
-### 1, Intstall a database 
-Install a database (I use mariadb which is the same as mysql) and then change database connection configurarion in 
+
 
 ```
 I using maven build application and I already install spring-boot -plugin for mvn you can simple run it by command line:
