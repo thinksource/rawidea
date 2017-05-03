@@ -34,12 +34,22 @@ http://localhost:8080/version
 This service is just check spring boot running or not
 
   
+## 3,Eclipse
 
+Since I develop the code by Eclipse, you can also import the project by eclipse import.
 
-## 3, Conditions
+if you use Eclipse, please project-> Maven -> Update Project firstly. 
+
+The RawideaApplication is main Springboot application, you should run it.
+
+## 4, Conditions
 ### 1, if more than 3 games will just get first 3 game and neglect the rest of them. 
 ### 2, if only have one person get scores, then only one person get name, other personal name is null
 ### 3, if the name of get score with more than 3 persons, it will return 500 internal error
 
-## 4, desgin consideration:
-### 1, I divided the 
+## 5, desgin consideration:
+### 1, I divided the two object one is BadmintonMatch, other is Game, and use one-to-many relationship between them.
+
+
+## 6， Todo
+### 1， Do not finished configuration the @AutoconfigureTestDatabase so you should configurate your test database by yourself and then thee RepositoryTest should be working
