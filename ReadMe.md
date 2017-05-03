@@ -1,10 +1,25 @@
 # ReadMe
 
+## Before Running
+
+### 1, Intstall a database 
+Install a database (I use mariadb which is the same as mysql) and then change database connection file.
+
+
+File: src/main/resources/application.properties
+
+change the line:
+
+```
+spring.datasource.url=You should special database by your local setting
+```
+
 ## How to Run
 
 ### 1, Intstall a database 
-Install a database (I use mariadb which is the same as mysql) and then change database connection file in
+Install a database (I use mariadb which is the same as mysql) and then change database connection configurarion in 
 
+```
 I using maven build application and I already install spring-boot -plugin for mvn you can simple run it by command line:
 
 ```
@@ -48,7 +63,9 @@ The RawideaApplication is main Springboot application, you should run it.
 ### 3, if the name of get score with more than 3 persons, it will return 500 internal error
 
 ## 5, desgin consideration:
-### 1, I divided the two object one is BadmintonMatch, other is Game, and use one-to-many relationship between them.
+### 1, I divided the two object one is BadmintonMatch, other is Game, and use one-to-many relationship between them. The Scorelist and Score class is for receiving 
+
+### 2，since not all column fileds need to list on response json, I use ApiResponse object to deal with 
 
 
 ## 6， Todo
