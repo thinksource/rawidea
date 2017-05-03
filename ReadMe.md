@@ -22,7 +22,7 @@ if you use Eclipse, please project-> Maven -> Update Project firstly.
 
 
 
-```
+
 I using maven build application and I already install spring-boot -plugin for mvn you can simple run it by command line:
 
 ```
