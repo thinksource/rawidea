@@ -110,7 +110,7 @@ public class Game {
 	public boolean isFinished() {
 		if (score1 == FINALSCORE || score2 == FINALSCORE)
 			return true;
-		else if ((score1 > FINISHSCORE || score2 > FINISHSCORE) && Math.abs(score1 - score2) >= 2)
+		else if ((score1 >= FINISHSCORE || score2 >= FINISHSCORE) && Math.abs(score1 - score2) >= 2)
 			return true;
 		else
 			return false;
@@ -119,7 +119,7 @@ public class Game {
 	public void Finishgame() {
 
 		if (isFinished()) {
-			game_number++;
+			
 			if (score1 > score2)
 				winner = person1;
 			else

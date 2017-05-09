@@ -55,8 +55,10 @@ public class MatchController {
 
 		BadmintonMatch re=new BadmintonMatch(person1,person2);
 		Game game=new Game(person1, person2);
+		game.setGame_number(1);
 		game.setMatch(re);
 		re.getGames().add(game);
+		
 		for(Score i : scores){
 			if(i.getScorer().equals(person1))game.addScore1();
 			else if(i.getScorer().equals(person2))game.addScore2();
@@ -68,13 +70,15 @@ public class MatchController {
 				game.Finishgame();
 				if(game.getWinner().equals(person1))game1++;
 				else if(game.getWinner().equals(person2))game2++;
+				//if more than 3 games will just get first 3 game and 
+				//neglect the rest of them.
+				if(game1+game2>=3)break;
 				game=new Game(person1, person2);
 				game.setMatch(re);
+				game.setGame_number(game1+game2+1);
 				re.getGames().add(game);
 			}
-			//if more than 3 games will just get first 3 game and 
-			//neglect the rest of them.
-			if(game1+game2>3)break;
+
 		}
 		matchdao.save(re);
 		for (Game g: re.getGames()){
