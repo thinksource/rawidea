@@ -31,6 +31,8 @@ public class MatchController {
 	@Autowired
 	private MatchRepository matchdao;
 	
+	private static final String replace_str="(truncated)";
+	
 	@RequestMapping(value = "/scorelist", method = RequestMethod.POST, produces =  "application/json")
 	public JSONObject resolveScoreslist(@RequestBody Scoreslist sclist) throws ScorelistException{
 		List<Score> scores=sclist.getScores();
@@ -98,8 +100,18 @@ public class MatchController {
 
 	@RequestMapping("/version")
 	public String fetch(){
-		
+		//log.info(truncate("123456789012345678901234567890",31));
+		//log.info(truncate("123456789012345678901234567890",25));
+		//log.info(truncate("1234567890",5));
 		return "running ok";
 	}
 	
+	
+	public String truncate(String str, int l){
+		if(l>str.length() || l<replace_str.length()){
+			return str;
+		}else{
+			return str.substring(0, 2)+"..."+replace_str+"..."+str.substring(str.length()-2);
+		}
+	}
 }
